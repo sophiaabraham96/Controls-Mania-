@@ -1,0 +1,358 @@
+FILE,LAD 2
+SOR,0 XIO,T4:2/DN TON,T4:0,60 EOR,0
+RCM,When T4:2 is not done, energize T4:0
+SOR,1 XIC,T4:0/DN TON,T4:1,40 EOR,1
+RCM,When T4:0 is done, energize T4:1
+SOR,2 XIC,T4:1/DN TON,T4:2,20 EOR,2
+RCM,When T4:1 is done, energize T4:2
+SOR,3 XIC,T4:0/TT TON,T4:3,40 EOR,3
+RCM,When T4:0 is timing, energize T4:3
+SOR,4 XIC,T4:0/TT OTE,O:2/0 EOR,4
+RCM,Activate left red light when T4:0 is timing
+SOR,5 XIC,T4:1/TT OTE,O:2/2 EOR,5
+RCM,Activate left green light when T4:1 is timing
+SOR,6 XIC,T4:2/TT OTE,O:2/1 EOR,6
+RCM,Activate left yellow light when T4:2 is timing
+SOR,7 BST,1 XIC,O:2/2 NXB,1 XIC,O:2/1 BND,1 OTE,O:2/4 EOR,7
+RCM,If the left green or yellow light is activated, activate the right red light
+SOR,8 XIC,O:2/0 XIC,T4:0/EN XIO,T4:3/TT OTE,O:2/5 EOR,8
+RCM,Activate right yellow light if the left red light is activated, T4:0 is timing and T4:3 is not timing
+SOR,9 XIC,T4:3/TT XIO,O:2/2 XIC,T4:0/TT OTE,O:2/6 EOR,9
+RCM,Activate right green light if timer T4:3 is timing and the left green is not activated and T4:0 is timing
+SOR,10 END,10
+RCM,
+FILE,SBR 3:
+SOR,0 END,0
+RCM,
+FILE,SBR 4:
+SOR,0 END,0
+RCM,
+FILE,SBR 5:
+SOR,0 END,0
+RCM,
+FILE,SBR 6:
+SOR,0 END,0
+RCM,
+FILE,SBR 7:
+SOR,0 END,0
+RCM,
+FILE,SBR 8:
+SOR,0 END,0
+RCM,
+FILE,SBR 9:
+SOR,0 END,0
+RCM,
+BTBL
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+NTBL
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+FTBL
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+SYMBOLS
+O:2/0 Red Left
+O:2/2 Green Left
+O:2/1 Yellow Left
+O:2/4 Red Right
+O:2/5 Yellow Right
+O:2/6 Green Right
+T4:0 Left Red Light Timer
+T4:1 Left Green Light Timer
+T4:2 Left Yellow Light Time
+T4:3 Comparison Timer
